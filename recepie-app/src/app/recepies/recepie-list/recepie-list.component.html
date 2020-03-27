@@ -1,0 +1,30 @@
+<div class="row">
+  <!-- col-xs-12 -->
+  <div class="col">
+    <button class="btn btn-success">New Recepie</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col">
+    <a
+      href="#"
+      class="list-goup-item clearfix"
+      *ngFor="let recepie of recepies"
+    >
+      <div class="pull-left">
+        <h4 class="list-goup-item-heading">{{ recepie.name }}</h4>
+        <p class="list-goup-item-text">{{ recepie.description }}</p>
+      </div>
+      <span class="pull-right">
+        <img
+          [src]="recepie.imagePath"
+          alt="{{ recepie.name }}"
+          class="img-responsive"
+          style="max-width: 50px;"
+        />
+      </span>
+    </a>
+    <app-recepie-item></app-recepie-item>
+  </div>
+</div>

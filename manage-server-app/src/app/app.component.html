@@ -1,0 +1,23 @@
+<div class="container">
+  <app-cockpit
+    (srvCreated)="onServerAdded($event)"
+    (bpCreated)="onBlueprintAdded($event)"
+  >
+  </app-cockpit>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-element
+        *ngFor="let serverElement of serverElements"
+        [serverElement]="serverElement"
+        >
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red"> {{serverElement.content}}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
+    </app-server-element>
+    </div>
+  </div>
+</div>
+
+<!-- element is the name of property in the app-server-element.html -->
