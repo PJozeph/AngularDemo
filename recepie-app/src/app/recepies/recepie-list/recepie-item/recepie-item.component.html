@@ -1,1 +1,9 @@
-<p>recepie-item works!</p>
+<a href="#" class="list-goup-item clearfix" #listElement (click)="recepieSelected( recepie)">
+  <div class="pull-left">
+    <h4 class="list-goup-item-heading">{{ recepie.name }}</h4>
+    <p class="list-goup-item-text">{{ recepie.description }}</p>
+  </div>
+  <span class="pull-right">
+    <img [src]="recepie.imagePath" alt="{{ recepie.name }}" class="img-responsive" style="max-width: 50px;" />
+  </span>
+</a>

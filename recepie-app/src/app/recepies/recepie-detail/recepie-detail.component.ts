@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Recepie } from '../recepie.model';
 
 @Component({
   selector: 'app-recepie-detail',
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class RecepieDetailComponent implements OnInit {
 
   constructor() { }
+
+
+  @Input() selectedRecepie: Recepie;
 
   ngOnInit(): void {
   }

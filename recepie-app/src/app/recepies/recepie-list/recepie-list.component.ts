@@ -1,5 +1,5 @@
 import { Recepie } from "./../recepie.model";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, EventEmitter, Output } from "@angular/core";
 
 @Component({
   selector: "app-recepie-list",
@@ -20,7 +20,14 @@ export class RecepieListComponent implements OnInit {
     )
   ];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
+  @Output() onSelectRecepie = new EventEmitter<any>();
+
+  selected(selectedRecepie) {
+    this.onSelectRecepie.emit(selectedRecepie)
+  }
+
 }

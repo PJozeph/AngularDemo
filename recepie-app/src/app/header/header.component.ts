@@ -9,9 +9,9 @@ export class HeaderComponent implements OnInit {
 
   @Output("switchView") view = new EventEmitter<{ viewName: string }>();
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onShowList(viewName) {
     this.view.emit({
