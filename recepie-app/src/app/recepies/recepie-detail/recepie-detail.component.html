@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-xs-12">
-    <img src="" alt="" class="img-responsive" />
+    <img [src]="selectedRecepie.imagePath" 
+    alt="{{selectedRecepie.name}}" 
+    class="img-responsive"
+    style="max-height: 300px;" />
   </div>
 </div>
 <div class="row">
