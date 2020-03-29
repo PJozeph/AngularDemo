@@ -1,0 +1,25 @@
+
+DATABINDING
+
+DataBinding is a communication betwen typescript  and html
+    -output data
+        String interplotation {{data}}
+        property binding [property] = "data"
+    - event binding
+        (event)= "expersion"
+
+DIRECTIVES
+
+Directives are instruction in the dom
+
+ngClass only adds css class if certain condition is true
+
+
+node_modules/bootstrap/dist/css/bootstrap.min.css
+
+
+COMPONENTS LIFECYCLE
+ngOnChanges
+doCheck
+afterContentInit
+afterContentChecked
