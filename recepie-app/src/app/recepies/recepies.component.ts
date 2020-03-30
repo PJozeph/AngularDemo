@@ -17,7 +17,6 @@ export class RecepiesComponent implements OnInit {
 
   onSelectRecipie(selectedRecipie) {
     this.selected = selectedRecipie;
-    console.log(selectedRecipie);
   }
 
 }
