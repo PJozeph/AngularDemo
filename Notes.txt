@@ -23,3 +23,5 @@ ngOnChanges
 doCheck
 afterContentInit
 afterContentChecked
+
+create directive is =› ng generate directive ‹directiveName› or ng g d ‹directiveName› 

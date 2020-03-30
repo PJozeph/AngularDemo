@@ -1,9 +1,10 @@
-<app-header (switchView)="onViewChanged($event)" ></app-header>
+<app-header (switchView)="onViewChanged($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recepies *ngIf="showView === 'recepie-list'" >  </app-recepies>
-      <app-shopping-list *ngIf="showView === 'shopping-list'" ></app-shopping-list>
+      <app-recepies *ngIf="showView === 'recepie-list'"> </app-recepies>
+      <app-shopping-list *ngIf="showView === 'shopping-list'"></app-shopping-list>
     </div>
   </div>
 </div>
+<progressbar max="200" [value]="166" type="danger" [striped]="true" [animate]="true"><i>166 / 200</i></progressbar>
