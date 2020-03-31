@@ -12,8 +12,8 @@ import { RecepieDetailComponent } from "./recepies/recepie-detail/recepie-detail
 import { RecepieListComponent } from "./recepies/recepie-list/recepie-list.component";
 import { ShoppingEditComponent } from "./shopping-list/shopping-edit/shopping-edit.component";
 import { RecepieItemComponent } from "./recepies/recepie-list/recepie-item/recepie-item.component";
-import { ProgressbarModule } from '@bit/valor-software.ngx-bootstrap.progressbar';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { ShoppingListService } from './shopping-list/shopping-list.service'
 
 @NgModule({
   declarations: [
@@ -27,8 +27,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
     ShoppingListComponent,
     DropdownDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ProgressbarModule.forRoot()],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

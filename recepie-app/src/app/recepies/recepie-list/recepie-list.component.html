@@ -7,8 +7,7 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <app-recepie-item
-     (onSelectRecepie)="selected($event)" 
+    <app-recepie-item 
       *ngFor="let recepieElement of recepies"
      [recepie]="recepieElement">  
     </app-recepie-item>

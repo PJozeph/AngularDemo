@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-md-5">
-    <app-recepie-list (onSelectRecepie)="onSelectRecipie($event)"></app-recepie-list>
+    <app-recepie-list></app-recepie-list>
   </div>
   <div class="col-md-7">
-    <app-recepie-detail *ngIf="selected ; else noRecepie" [selectedRecepie]="selected">
+    <app-recepie-detail *ngIf="selectedRecepie ; else noRecepie" [selectedRecepie]="selectedRecepie">
     </app-recepie-detail>
     <ng-template #noRecepie>
       <p>Please select one recepie </p>
