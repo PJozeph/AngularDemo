@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <app-active-users
+        [users]="activeUsers">
+      </app-active-users>
+      <app-inactive-users
+        [users]="inactiveUsers">
+      </app-inactive-users>
+      <div>
+        <p>User status has changed {{getNumberOfStatusChnage()}} </p>
+      </div>
+    </div>
+  </div>
+</div>
