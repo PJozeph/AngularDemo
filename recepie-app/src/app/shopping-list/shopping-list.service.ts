@@ -11,13 +11,17 @@ export class ShoppingListService {
 
     onAddIngridient = new EventEmitter<Ingredient>();
 
+    addAll(ingredient: Ingredient[]) {
+        this.ingredients.push(...ingredient);
+    }
+
     addIngridient(ingredient: Ingredient) {
         this.ingredients.push(ingredient);
     }
 
     getIngredients() {
         // slich method create a copy of ingredients
-        return this.ingredients;
+        return this.ingredients.slice();
     }
 
 }
