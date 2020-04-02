@@ -11,23 +11,10 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModuel } from './app-routing.mocule';
 
-const appRoute: Routes = [
-  { 'path': '', component: HomeComponent },
-  {
-    'path': 'users', component: UsersComponent, children: [
-      { 'path': ':id/:name', component: UserComponent }
-    ]
-  },
-  {
-    'path': 'servers', component: ServersComponent, children: [
-      { 'path': ':id/edit', component: EditServerComponent },
-      { 'path': ':id', component: ServerComponent }
-    ]
-  }
-]
-// servers => localhost:2400/servers
-// users/:id will triger for localhost:2400/user/something too
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,12 +23,13 @@ const appRoute: Routes = [
     ServersComponent,
     UserComponent,
     EditServerComponent,
-    ServerComponent
+    ServerComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoute)
+    AppRoutingModuel
   ],
   providers: [ServersService],
   bootstrap: [AppComponent]
