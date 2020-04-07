@@ -1,9 +1,8 @@
-<app-header (switchView)="onViewChanged($event)"></app-header>
+<app-header></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recepies *ngIf="showView === 'recepie-list'"> </app-recepies>
-      <app-shopping-list *ngIf="showView === 'shopping-list'"></app-shopping-list>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
