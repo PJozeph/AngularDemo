@@ -1,4 +1,8 @@
-<a href="#" class="list-goup-item clearfix" #listElement (click)="onSelect( recepie)">
+<a class="list-goup-item clearfix" 
+#listElement (click)="onSelect(recepie)"
+[routerLink]="[recepieId]"
+style="cursor: pointer;"
+routerLinkActive="active">
   <div class="pull-left">
     <h4 class="list-goup-item-heading">{{ recepie.name }}</h4>
     <p class="list-goup-item-text">{{ recepie.description }}</p>

@@ -9,7 +9,8 @@
   <div class="col-xs-12">
     <app-recepie-item 
       *ngFor="let recepieElement of recepies"
-     [recepie]="recepieElement">  
+     [recepie]="recepieElement"
+     [recepieId] = "recepieElement.id">  
     </app-recepie-item>
   </div>
 </div>

@@ -7,15 +7,8 @@ import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 })
 export class HeaderComponent implements OnInit {
 
-  @Output("switchView") view = new EventEmitter<{ viewName: string }>();
-
   constructor() { }
 
   ngOnInit(): void { }
 
-  onShowList(viewName) {
-    this.view.emit({
-      viewName: viewName
-    })
-  }
 }

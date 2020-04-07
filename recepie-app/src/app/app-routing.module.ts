@@ -1,8 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { RecepieListComponent } from './recepies/recepie-list/recepie-list.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { RecepiesComponent } from './recepies/recepies.component';
+import { RecepieDetailComponent } from './recepies/recepie-detail/recepie-detail.component';
+import { SelectRecepieMessageComponent } from './recepie-list/select-recepie-message/select-recepie-message.component';
+import { RecipieEditComponent } from './recepies/recipie-edit/recipie-edit.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/recepies', pathMatch: 'full' },
+  {
+    path: 'recepies', component: RecepiesComponent, children: [
+      { path: '', component: SelectRecepieMessageComponent },
+      { path: 'new', component: RecipieEditComponent },
+      { path: ':id', component: RecepieDetailComponent },
+      { path: ':id/edit', component: RecipieEditComponent },
+    ]
+  },
+  { path: 'shopping-list', component: ShoppingListComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

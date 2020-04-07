@@ -10,6 +10,7 @@ import { RecepieService } from '../../recepie.service';
 export class RecepieItemComponent implements OnInit {
 
   @Input() recepie: Recepie;
+  @Input() recepieId;
 
   @Output() onSelectRecepie = new EventEmitter<any>();
 

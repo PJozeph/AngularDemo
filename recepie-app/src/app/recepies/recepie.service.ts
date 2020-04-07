@@ -7,7 +7,8 @@ export class RecepieService {
 
     private recepies: Recepie[] = [
         new Recepie(
-            "Test Name",
+            1,
+            "Hamburger",
             "This is just for a test should be a description here",
             "https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg",
             [
@@ -17,7 +18,8 @@ export class RecepieService {
             ]
         ),
         new Recepie(
-            "This is Name test 2",
+            2,
+            "Pizza",
             "Description test 2",
             "https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg",
             [
@@ -29,6 +31,15 @@ export class RecepieService {
     ];
 
     onSelectRecepie = new EventEmitter<any>();
+
+    getRecepieById(id: number) {
+        const recepie = this.recepies.find((recepie) => {
+            return recepie.id === id;
+            }
+        );
+        console.log(recepie)
+        return recepie;
+    }
 
     getRecepies() {
         // slice(); will return the new instance of recpies
