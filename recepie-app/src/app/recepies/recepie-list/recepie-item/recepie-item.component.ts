@@ -20,7 +20,7 @@ export class RecepieItemComponent implements OnInit {
   }
 
   onSelect(selectedRecepie) {
-    this.recepieService.onSelectRecepie.emit(selectedRecepie);
+    this.recepieService.onSelectRecepie.next(selectedRecepie);
   }
 
 }

@@ -1,6 +1,7 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Recepie } from './recepie.model'
 import { Ingredient } from '../shared/ingredient.model';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class RecepieService {
@@ -30,7 +31,7 @@ export class RecepieService {
         )
     ];
 
-    onSelectRecepie = new EventEmitter<any>();
+    onSelectRecepie = new Subject<any>();
 
     getRecepieById(id: number) {
         const recepie = this.recepies.find((recepie) => {
