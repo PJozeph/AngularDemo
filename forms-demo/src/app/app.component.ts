@@ -7,7 +7,7 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  @ViewChild("formElement", { static: false }) form: NgForm;
+  @ViewChild("formElement", { static: false }) formElement: NgForm;
 
   defaultQuestion = "pet";
   answer = "";
@@ -32,5 +32,7 @@ export class AppComponent {
     this.user.userName = formElement.value.userData.username;
     this.user.userSecret = formElement.value.userData.questionAnswer;
     this.user.userSecret = formElement.value.userData.secret;
+
+    this.formElement.reset();
   }
 }
