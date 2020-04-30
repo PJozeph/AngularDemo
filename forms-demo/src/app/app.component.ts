@@ -1,5 +1,9 @@
 import { Component, ViewChild } from "@angular/core";
-import { NgForm } from "@angular/forms";
+import { NgForm, FormControl } from "@angular/forms";
+
+import { Observable } from "rxjs";
+
+
 
 @Component({
   selector: "app-root",
@@ -35,4 +39,5 @@ export class AppComponent {
 
     this.formElement.reset();
   }
+
 }
