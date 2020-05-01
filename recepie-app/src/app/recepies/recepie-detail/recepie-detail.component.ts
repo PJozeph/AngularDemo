@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recepie } from '../recepie.model';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
-import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecepieService } from '../recepie.service';
 
 @Component({
@@ -19,7 +19,6 @@ export class RecepieDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      console.log(params)
       this.selectedRecepie = this.recepieService.getRecepieById(+params['id']);
     });
   }
@@ -29,7 +28,6 @@ export class RecepieDetailComponent implements OnInit {
   }
 
   updateRecepie(selectedRecepie) {
-    console.log(selectedRecepie)
     this.router.navigate(['edit'], {relativeTo : this.activatedRoute});
   }
 
