@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { RecepieListComponent } from './recepies/recepie-list/recepie-list.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecepiesComponent } from './recepies/recepies.component';
 import { RecepieDetailComponent } from './recepies/recepie-detail/recepie-detail.component';

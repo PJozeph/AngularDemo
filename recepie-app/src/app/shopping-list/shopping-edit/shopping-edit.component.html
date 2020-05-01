@@ -1,22 +1,45 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
+    <form (ngSubmit)="onSubmit(formElement)" #formElement="ngForm" >
       <div class="row">
         <div class="col-sm-5 form-group">
           <label for="name" >Name</label>
-          <input type="text" id="name" name="name" #nameInput class="form-control" required />
+          <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          ngModel
+          required
+          class="form-control"/>
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Amount</label>
-          <input type="number" id="amount" name="amount" #amountInput class="form-control" required />
+          <input 
+          type="number" 
+          id="amount" 
+          name="amount" 
+          class="form-control"
+          ngModel
+          required 
+          />
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
           <!-- passing parameters as html referencies #nameInput and #amountInput -->
-          <button class="btn btn-success custom-button" type="submit" (click)="addIngredient(nameInput, amountInput)" >Add</button>
-          <button class="btn btn-danger custom-button" type="button">Delete</button>
-          <button class="btn btn-primary custom-button" type="button">Clear</button>
+          <button 
+            class="btn btn-success custom-button"  
+            type="submit"
+            [disabled]=!formElement.valid  >{{editMode ? "Update" : "Add"}} </button>
+          <button 
+            *ngIf="editMode" 
+            class="btn btn-danger custom-button" 
+            type="button" 
+            (click)="deleteElement(formElement)">Delete</button>
+          <button 
+            class="btn btn-primary custom-button" 
+            type="button" 
+            (click)="clearForm(formElement)" >Clear</button>
         </div>
       </div>
     </form>

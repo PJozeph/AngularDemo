@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class RecepieService {
+    recepieChanged = new Subject<Ingredient[]>();
 
     private recepies: Recepie[] = [
         new Recepie(
