@@ -5,11 +5,11 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class RecepieService {
-    recepieChanged = new Subject<Ingredient[]>();
+    recepieChanged = new Subject<Recepie[]>();
 
     private recepies: Recepie[] = [
         new Recepie(
-            1,
+            0,
             "Hamburger",
             "This is just for a test should be a description here",
             "https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg",
@@ -20,7 +20,7 @@ export class RecepieService {
             ]
         ),
         new Recepie(
-            2,
+            1,
             "Pizza",
             "Description test 2",
             "https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg",
@@ -39,13 +39,30 @@ export class RecepieService {
             return recepie.id === id;
             }
         );
-        console.log(recepie)
         return recepie;
     }
 
     getRecepies() {
-        // slice(); will return the new instance of recpies
-        return this.recepies;
+        return this.recepies.slice();
+    }
+
+    addRecepie(recepie : Recepie) {
+        let recepieWithMaxId = Math.max.apply(Math, this.recepies.map(function(o) { return o.id }))
+        recepieWithMaxId++;
+        recepie.id = recepieWithMaxId; 
+        this.recepies.push(recepie);
+        this.recepieChanged.next(this.recepies.slice());
+    }
+    
+    updateRecepie(index : number , recepie : Recepie) {
+        recepie.id = index;
+        this.recepies[index] = recepie;
+        this.recepieChanged.next(this.recepies.slice());
+    }
+
+    deleteRecepie(index : number){
+        this.recepies.splice(index,1);
+        this.recepieChanged.next(this.recepies.slice())
     }
 
 }

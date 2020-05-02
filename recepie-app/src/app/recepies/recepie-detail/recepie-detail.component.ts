@@ -31,4 +31,13 @@ export class RecepieDetailComponent implements OnInit {
     this.router.navigate(['edit'], {relativeTo : this.activatedRoute});
   }
 
+  eleteRecepie() {
+    this.recepieService.deleteRecepie(this.selectedRecepie.id)
+  }
+
+  deleteRecepie() {
+    this.recepieService.deleteRecepie(this.selectedRecepie.id);
+    this.router.navigate(['/recepies']);
+  }
+
 }

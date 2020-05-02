@@ -3,8 +3,10 @@
         <form [formGroup]="recepieForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-xs-12">
-                    <button class="btn btn-success"> Save</button>
-                    <button class="btn btn-danger"> Cancel</button>
+                    <button 
+                    class="btn btn-success"
+                    [disabled]="!recepieForm.valid"> Save</button>
+                    <button class="btn btn-danger" (click)="onCancel()" > Cancel</button>
                 </div>
             </div>
             <div class="row">
@@ -15,6 +17,7 @@
                             type="text"
                              id="name" 
                              class="form-control"
+                             name="name"
                              formControlName="name">
                         </div>
                     </label>
@@ -26,8 +29,10 @@
                         <label for="imagePath"> Imagepath
                             <input 
                             type="text" 
-                            id="imagePath" 
+                            id="imagePath"
+                            name="imagePath" 
                             class="form-control"
+                            #imagePath
                             formControlName="imagePath">
                         </label>
                     </div>
@@ -35,7 +40,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <img src="" class="img-responsive">
+                    <img [src]="imagePath.value"  alt="not avaliable" class="img-responsive">
                 </div>
             </div>
             <div class="row">
@@ -71,7 +76,11 @@
                             formControlName="amount">
                         </div>
                         <div class="col-xs-2">
-                            <button class="btn btn-danger">X</button>
+                            <button 
+                            type="button"
+                            class="btn btn-danger"
+                            (click)="deleteIngredient(i)"
+                            >X</button>
                         </div>
                     </div>
                     <hr>
