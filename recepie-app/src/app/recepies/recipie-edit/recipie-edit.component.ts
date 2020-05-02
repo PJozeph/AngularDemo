@@ -15,9 +15,7 @@ export class RecipieEditComponent implements OnInit {
   editMode = false;
   recepieForm: FormGroup;
 
-
   constructor(private activatedRoute: ActivatedRoute ,private router : Router ,private recepieService: RecepieService) { }
-
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((param: Params) => {
