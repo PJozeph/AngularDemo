@@ -17,6 +17,9 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { SelectRecepieMessageComponent } from './recepie-list/select-recepie-message/select-recepie-message.component';
 import { RecipieEditComponent } from './recepies/recipie-edit/recipie-edit.component'
 import { RecepieService } from './recepies/recepie.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DataStorageService } from './shared/data-storage.service';
+import { RecepieResolverService } from './recepies/recepies-resolver.service';
 
 @NgModule({
   declarations: [
@@ -32,8 +35,12 @@ import { RecepieService } from './recepies/recepie.service';
     SelectRecepieMessageComponent,
     RecipieEditComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [ShoppingListService, RecepieService],
+  imports: [BrowserModule
+    , AppRoutingModule
+    , FormsModule
+    , ReactiveFormsModule
+    , HttpClientModule],
+  providers: [ShoppingListService, RecepieService, DataStorageService, RecepieResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

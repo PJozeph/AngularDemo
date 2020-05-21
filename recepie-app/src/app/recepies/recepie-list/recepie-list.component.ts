@@ -3,6 +3,8 @@ import { Component, OnInit, EventEmitter, Output, OnDestroy } from "@angular/cor
 import { RecepieService } from '../recepie.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
+import { HeaderComponent } from 'src/app/header/header.component';
 
 @Component({
   selector: "app-recepie-list",
@@ -13,11 +15,15 @@ export class RecepieListComponent implements OnInit, OnDestroy {
   recepies: Recepie[];
   subscription: Subscription;
 
-  constructor(private recepiesService: RecepieService, private route: Router, private activeRoute: ActivatedRoute) { }
+  constructor
+  (private recepiesService: RecepieService,
+   private route: Router, 
+   private activeRoute: ActivatedRoute,
+   private dataStorage : DataStorageService) { }
 
   ngOnInit(): void {
     this.recepies = this.recepiesService.getRecepies();
-    this.subscription = this.subscription = this.recepiesService.recepieChanged.subscribe(
+    this.subscription = this.recepiesService.recepieChanged.subscribe(
       (recepies: Recepie[]) => {
         this.recepies = recepies;
       }

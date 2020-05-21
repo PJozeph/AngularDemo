@@ -15,8 +15,6 @@ export class RecepieDetailComponent implements OnInit {
 
   selectedRecepie: Recepie;
 
-
-
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.selectedRecepie = this.recepieService.getRecepieById(+params['id']);
