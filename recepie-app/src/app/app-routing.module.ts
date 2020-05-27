@@ -6,12 +6,14 @@ import { RecepieDetailComponent } from './recepies/recepie-detail/recepie-detail
 import { SelectRecepieMessageComponent } from './recepie-list/select-recepie-message/select-recepie-message.component';
 import { RecipieEditComponent } from './recepies/recipie-edit/recipie-edit.component';
 import { RecepieResolverService } from './recepies/recepies-resolver.service';
+import { AuthComponent } from './auth/auth-component';
+import { AuthGuard } from './auth/auth-guard';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/recepies', pathMatch: 'full' },
   {
-    path: 'recepies', component: RecepiesComponent, children: [
+    path: 'recepies', component: RecepiesComponent, canActivate : [AuthGuard] ,children: [
       { path: '', component: SelectRecepieMessageComponent },
       { path: 'new', component: RecipieEditComponent },
       { path: ':id', component: RecepieDetailComponent , resolve : [RecepieResolverService] },
@@ -19,6 +21,7 @@ const routes: Routes = [
     ]
   },
   { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'auth', component: AuthComponent },
 ];
 
 @NgModule({
